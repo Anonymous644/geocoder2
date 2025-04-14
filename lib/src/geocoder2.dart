@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class Geocoder2 {
   ///Get City ,country , postalCode,state,streetNumber and countryCode from latitude and longitude
-  static Future<GeoData> getDataFromCoordinates({
+  static Future<GeoData?> getDataFromCoordinates({
     required double latitude,
     required double longitude,
     required String googleMapApiKey,
@@ -56,12 +56,12 @@ class Geocoder2 {
         countryCode: countryCode,
       );
     } else {
-      return null as GeoData;
+      return null ;
     }
   }
 
   ///Get City ,country , postalCode,state,streetNumber and countryCode from address like "277 Bedford Ave, Brooklyn, NY 11211, USA"
-  static Future<GeoData> getDataFromAddress({
+  static Future<GeoData?> getDataFromAddress({
     required String address,
     required String googleMapApiKey,
     String? language,
@@ -115,7 +115,7 @@ class Geocoder2 {
         streetNumber: streetNumber,
       );
     } else {
-      return null as GeoData;
+      return null ;
     }
   }
 }
